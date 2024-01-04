@@ -22,7 +22,10 @@ class AddContact extends React.Component {
     this.props.addContactHandler(this.state);
     // after submitting we need to clear the input fields
     this.setState({ name: "", email: "", phone: "" });
+    // this.props.history.push("/");
+    console.log(this.props);
   };
+
   render() {
     return (
       <div className="ui main">

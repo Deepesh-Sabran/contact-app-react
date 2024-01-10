@@ -5,6 +5,7 @@ import Header from "./Header";
 import AddContact from "./AddContact";
 import ContactList from "./ContactList";
 import { v4 as uuid } from "uuid";
+import ContactDetails from "./ContactDetails";
 
 function App() {
   // creating a list to render
@@ -57,13 +58,24 @@ function App() {
                 getContactId={removeContactHandler}
               />
             )}
+            // render={(props) => {
+            //   <ContactList
+            //     {...props}
+            //     contacts={contacts}
+            //     getContactId={removeContactHandler}
+            //   />;
+            // }}
           />
           <Route
             path="/add"
             Component={() => (
               <AddContact addContactHandler={addContactHandler} />
             )}
+            // render={(props) => {
+            //   <AddContact {...props} addContactHandler={addContactHandler} />;
+            // }}
           />
+          <Route path="/contact/:id" Component={ContactDetails} />
         </Routes>
         {/* <AddContact addContactHandler={addContactHandler} /> */}
         {/* sending the list as a this.props. */}
